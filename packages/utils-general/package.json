@@ -30,7 +30,7 @@
   "types": "dist/js/src/index.d.ts",
   "dependencies": {
     "@energyweb/origin-backend-client": "5.0.1",
-    "eth-sig-util": "2.5.2",
+    "eth-sig-util": "2.5.3",
     "ethers": "4.0.47",
     "jsonschema": "1.2.6",
     "moment": "^2.24.0",
