@@ -36,8 +36,8 @@ for i in "${REQUIRED_VARIABLES[@]}"
     value=$(printf '%s\n' "${!varname}")
 
     if [ -z "$value" ]; then
-      if test -f $rootEnvFile; then
-        value=$(grep -e '^'$varname'=.*' $rootEnvFile | cut -d '=' -f2 | xargs)
+      if test -f "$rootEnvFile"; then
+        value=$(grep -e '^'"$varname"'=.*' "$rootEnvFile" | cut -d '=' -f2 | xargs)
       fi
     fi
 
