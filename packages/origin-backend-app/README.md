@@ -8,15 +8,20 @@
   <br>
 </h1>
 
-**Origin-Backend-App** package provides is a runner for a nest.js application that consist of **Origin-Backend** and **Exchange** packages.
+**Origin-Backend-App** package provides is a runner for a nest.js application
+that consist of **Origin-Backend** and **Exchange** packages.
 
 ## Development
 
-Exchange project is currently not meant to be run as a separate nest application. In order to run exchange project please refer to https://github.com/energywebfoundation/origin/tree/master/packages/origin-backend-app
+Exchange project is currently not meant to be run as a separate nest
+application. In order to run exchange project please refer to
+https://github.com/energywebfoundation/origin/tree/master/packages/origin-backend-app
 
-`yarn start` to start the origin backend and exchange as one application Note: this will not run the migrations for origin-backend and exchange.
+`yarn start` to start the origin backend and exchange as one application Note:
+this will not run the migrations for origin-backend and exchange.
 
-Default TypeOrm configuration requires running PostgreSQL database. The detailed config with .env parameters is:
+Default TypeOrm configuration requires running PostgreSQL database. The detailed
+config with .env parameters is:
 
 ```
 DB_HOST      - default 'localhost'
@@ -80,11 +85,16 @@ Swagger endpoint can be found at
 
 ### Custom event handlers
 
-It's possible to handle events emitted by `@energyweb/exchange` in the `@energyweb/origin-backend-app` project. This feature allows 3rd party developers to implement custom event handling logic, additional to existing core event handlers.
+It's possible to handle events emitted by `@energyweb/exchange` in the
+`@energyweb/origin-backend-app` project. This feature allows 3rd party
+developers to implement custom event handling logic, additional to existing core
+event handlers.
 
-Currently supported event is `BulkTradeExecutedEvent` which is emitted whenever new trade in the matching engine occurs.
+Currently supported event is `BulkTradeExecutedEvent` which is emitted whenever
+new trade in the matching engine occurs.
 
-In order to register custom event handler for this event please follow these steps:
+In order to register custom event handler for this event please follow these
+steps:
 
 1. Create custom event handler code
 
@@ -103,7 +113,8 @@ export class NewTradeExecutedEventHandler implements IEventHandler<BulkTradeExec
 }
 ```
 
-Note: This follows the recipe created by Nest.js team which is documented here https://docs.nestjs.com/recipes/cqrs
+Note: This follows the recipe created by Nest.js team which is documented here
+https://docs.nestjs.com/recipes/cqrs
 
 2. Register your event handler as provider in `origin-app.module.ts`
 
@@ -124,4 +135,6 @@ export class OriginAppModule {
 }
 ```
 
-Note: Due to a way in which Nest.js is handling DI, your custom handler class name has to be unique, this means you should not use name taken by core event handler **TradeExecutedEventHandler**
+Note: Due to a way in which Nest.js is handling DI, your custom handler class
+name has to be unique, this means you should not use name taken by core event
+handler **TradeExecutedEventHandler**
