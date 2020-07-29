@@ -19,33 +19,32 @@ rm -rf ./env-config.js
 touch ./env-config.js
 
 # Add assignment
-echo "{" >> ./env-config.js
+echo "{" >>./env-config.js
 
 envToRead=.env
 rootEnvFile=../../.env
 if [ ! -e "$envToRead" ]; then
-    envToRead=$rootEnvFile
+  envToRead=$rootEnvFile
 fi
 
-pos=$(( ${#REQUIRED_VARIABLES[*]} - 1 ))
+pos=$((${#REQUIRED_VARIABLES[*]} - 1))
 last=${REQUIRED_VARIABLES[$pos]}
 
-for i in "${REQUIRED_VARIABLES[@]}"
-  do
-    varname="$i"
-    value=$(printf '%s\n' "${!varname}")
+for i in "${REQUIRED_VARIABLES[@]}"; do
+  varname="$i"
+  value=$(printf '%s\n' "${!varname}")
 
-    if [ -z "$value" ]; then
-      if test -f "$rootEnvFile"; then
-        value=$(grep -e '^'"$varname"'=.*' "$rootEnvFile" | cut -d '=' -f2 | xargs)
-      fi
+  if [ -z "$value" ]; then
+    if test -f "$rootEnvFile"; then
+      value=$(grep -e '^'"$varname"'=.*' "$rootEnvFile" | cut -d '=' -f2 | xargs)
     fi
+  fi
 
-    if [[ $i == $last ]]; then
-        echo "    \"$varname\": \"$value\"" >> ./env-config.js
-      else
-        echo "    \"$varname\": \"$value\"," >> ./env-config.js
-    fi
-  done
+  if [[ $i == $last ]]; then
+    echo "    \"$varname\": \"$value\"" >>./env-config.js
+  else
+    echo "    \"$varname\": \"$value\"," >>./env-config.js
+  fi
+done
 
-echo "}" >> ./env-config.js
+echo "}" >>./env-config.js

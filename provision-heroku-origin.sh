@@ -1,14 +1,13 @@
 #!/bin/bash
 
-heroku apps:create "$PREFIX-origin-sim-$STAGE"  -t "$TEAM" --region eu
-heroku apps:create "$PREFIX-origin-ui-$STAGE"  -t "$TEAM" --region eu
-heroku apps:create "$PREFIX-origin-api-$STAGE"  -t "$TEAM" --region eu
+heroku apps:create "$PREFIX-origin-sim-$STAGE" -t "$TEAM" --region eu
+heroku apps:create "$PREFIX-origin-ui-$STAGE" -t "$TEAM" --region eu
+heroku apps:create "$PREFIX-origin-api-$STAGE" -t "$TEAM" --region eu
 
-if heroku addons -a "$PREFIX-origin-api-$STAGE" --json | grep postgresql
-then 
-   echo "PostgreSQL already provisioned";
+if heroku addons -a "$PREFIX-origin-api-$STAGE" --json | grep postgresql; then
+  echo "PostgreSQL already provisioned"
 else
-   heroku addons:create heroku-postgresql:hobby-dev -a "$PREFIX-origin-api-$STAGE"
+  heroku addons:create heroku-postgresql:hobby-dev -a "$PREFIX-origin-api-$STAGE"
 fi
 
 heroku config:set --app "$PREFIX-origin-api-$STAGE" \
