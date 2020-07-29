@@ -71,4 +71,3 @@ SELECT
             SELECT
                 MAX("id")
                 FROM public.device) + 1);
-
