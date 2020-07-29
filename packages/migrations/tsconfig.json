@@ -1,18 +1,16 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "outDir": "./dist/js"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "references": [
-    {
-      "path": "../issuer/tsconfig.json"
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "composite": true,
+        "outDir": "./dist/js"
     },
-    {
-      "path": "../origin-backend-core/tsconfig.json"
-    }
-  ]
+    "include": ["src/**/*"],
+    "references": [
+        {
+            "path": "../issuer/tsconfig.json"
+        },
+        {
+            "path": "../origin-backend-core/tsconfig.json"
+        }
+    ]
 }

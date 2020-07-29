@@ -1,24 +1,21 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "outDir": "./dist/js",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  },
-  "include": [
-    "src/**/*",
-    "ormconfig.json"
-  ],
-  "references": [
-    {
-      "path": "../origin-backend-core/tsconfig.json"
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "composite": true,
+        "outDir": "./dist/js",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
-    {
-      "path": "../origin-backend/tsconfig.json"
-    },
-    {
-      "path": "../exchange/tsconfig.json"
-    }
-  ]
+    "include": ["src/**/*", "ormconfig.json"],
+    "references": [
+        {
+            "path": "../origin-backend-core/tsconfig.json"
+        },
+        {
+            "path": "../origin-backend/tsconfig.json"
+        },
+        {
+            "path": "../exchange/tsconfig.json"
+        }
+    ]
 }

@@ -1,56 +1,35 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "schedule": [
-    "every weekend"
-  ],
-  "ignoreDeps": [
-    "@energyweb/device-registry",
-    "@energyweb/utils-general",
-    "@energyweb/origin-backend",
-    "ganache-cli",
-    "solc",
-    "@date-io/moment"
-  ],
-  "labels": [
-    "dependencies"
-  ],
-  "packageRules": [
-    {
-      "packagePatterns": [
-        "eslint"
-      ],
-      "groupName": "eslint"
-    },
-    {
-      "packagePatterns": [
-        "webpack",
-        "-loader"
-      ],
-      "groupName": "webpack"
-    },
-    {
-      "packagePatterns": [
-        "jest"
-      ],
-      "groupName": "jest"
-    },
-    {
-      "packagePatterns": [
-        "react",
-        "redux"
-      ],
-      "groupName": "react"
-    },
-    {
-      "updateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
-      "automerge": true
-    }
-  ]
+    "extends": ["config:base"],
+    "schedule": ["every weekend"],
+    "ignoreDeps": [
+        "@energyweb/device-registry",
+        "@energyweb/utils-general",
+        "@energyweb/origin-backend",
+        "ganache-cli",
+        "solc",
+        "@date-io/moment"
+    ],
+    "labels": ["dependencies"],
+    "packageRules": [
+        {
+            "packagePatterns": ["eslint"],
+            "groupName": "eslint"
+        },
+        {
+            "packagePatterns": ["webpack", "-loader"],
+            "groupName": "webpack"
+        },
+        {
+            "packagePatterns": ["jest"],
+            "groupName": "jest"
+        },
+        {
+            "packagePatterns": ["react", "redux"],
+            "groupName": "react"
+        },
+        {
+            "updateTypes": ["minor", "patch", "pin", "digest"],
+            "automerge": true
+        }
+    ]
 }
