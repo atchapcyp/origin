@@ -32,19 +32,19 @@ $bundleOfferBg: lighten($backgroundColorDark, 13%);
         .CardHeader {
             background-color: $bundleContentCardHeaderBg;
         }
-        
+
         .CardContent {
             background-color: $bundleCardContentBg;
             border-bottom-color: $bundleCardBorderBg;
         }
-        
+
         .SelectedCardHeader {
             background-color: $primaryColor;
         }
-        
+
         .SelectedCardContent {
             background-color: $bundleSelectedCardContentBg;
-            border-bottom-color: $bundleCardBorderBg; 
+            border-bottom-color: $bundleCardBorderBg;
         }
     }
 }

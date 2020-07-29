@@ -5,7 +5,5 @@ module.exports = {
         'max-classes-per-file': 'off',
         'guard-for-in': 'off'
     },
-    env: {
-        jest: true
-    }
+    env: { jest: true }
 };

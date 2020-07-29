@@ -9,9 +9,5 @@ module.exports = {
     },
     setupFilesAfterEnv: ['<rootDir>src/__tests__/config/test-setup.js'],
     testEnvironment: 'jest-environment-jsdom-fifteen',
-    globals: {
-        'ts-jest': {
-            tsConfig: 'tsconfig.json'
-        }
-    }
+    globals: { 'ts-jest': { tsConfig: 'tsconfig.json' } }
 };

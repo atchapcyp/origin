@@ -7,21 +7,13 @@ module.exports = {
         'plugin:prettier/recommended'
     ],
     parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        project: './tsconfig.json'
-    },
+    parserOptions: { ecmaVersion: 2018, sourceType: 'module', project: './tsconfig.json' },
     plugins: ['@typescript-eslint', 'react-hooks'],
     rules: {
         'array-callback-return': 'off',
         '@typescript-eslint/naming-convention': [
             'error',
-            {
-                selector: 'interface',
-                format: ['PascalCase'],
-                prefix: ['I']
-            }
+            { selector: 'interface', format: ['PascalCase'], prefix: ['I'] }
         ],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
@@ -50,24 +42,12 @@ module.exports = {
         'import/extensions': [
             'error',
             'ignorePackages',
-            {
-                js: 'never',
-                jsx: 'never',
-                ts: 'never',
-                tsx: 'never'
-            }
+            { js: 'never', jsx: 'never', ts: 'never', tsx: 'never' }
         ],
         'react-hooks/rules-of-hooks': 'error'
     },
     settings: {
-        'import/resolver': {
-            node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts']
-            }
-        },
-        react: {
-            pragma: 'React',
-            version: 'detect'
-        }
+        'import/resolver': { node: { extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'] } },
+        react: { pragma: 'React', version: 'detect' }
     }
 };

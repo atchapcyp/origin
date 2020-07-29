@@ -114,7 +114,7 @@
                 "from": "From",
                 "to": "To",
                 "source": "Source",
-                "generationDate":"Generation Date",
+                "generationDate": "Generation Date",
                 "generationDateStart": "Generation Start Date",
                 "generationDateEnd": "Generation End Date",
                 "claimedEnergy": "Claimed Energy",
@@ -220,7 +220,6 @@
                 "registerUser": "Register user",
                 "userProfile": "User profile"
             }
-            
         },
         "general": {
             "responses": {
@@ -449,7 +448,7 @@
                 "certificates": "certificates",
                 "price": "Price per MWh",
                 "bundleBought": "Bundle was fully purchased",
-                "editBundleVolume" : "Edit volume (MWh)"
+                "editBundleVolume": "Edit volume (MWh)"
             },
             "actions": {
                 "sellAsBundle": "Sell as bundle"
