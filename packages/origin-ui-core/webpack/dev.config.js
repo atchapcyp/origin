@@ -3,22 +3,24 @@ const merge = require('webpack-merge');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = merge(baseConfig, {
-  mode : 'development',
+    mode: 'development',
 
-  // Enable sourcemaps for debugging webpack's output.
-  devtool : 'source-map',
+    // Enable sourcemaps for debugging webpack's output.
+    devtool: 'source-map',
 
-  plugins : [ new ForkTsCheckerWebpackPlugin() ],
+    plugins: [new ForkTsCheckerWebpackPlugin()],
 
-  module : {
-    rules : [ {
-      test : /\.tsx?$/,
-      loader : 'ts-loader',
-      options : {
-        configFile : '../tsconfig.json',
-        projectReferences : true,
-        transpileOnly : true
-      }
-    } ]
-  }
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                options: {
+                    configFile: '../tsconfig.json',
+                    projectReferences: true,
+                    transpileOnly: true
+                }
+            }
+        ]
+    }
 });
