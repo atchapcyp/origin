@@ -1,15 +1,21 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "composite": true,
-        "rootDir": "./",
-        "outDir": "./dist/js",
-        "types": ["mocha", "node", "truffle-typings"]
-    },
-    "include": ["./src/**/*"],
-    "references": [
-        {
-            "path": "../issuer/tsconfig.json"
-        }
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./",
+    "outDir": "./dist/js",
+    "types": [
+      "mocha",
+      "node",
+      "truffle-typings"
     ]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "references": [
+    {
+      "path": "../issuer/tsconfig.json"
+    }
+  ]
 }
